@@ -30,7 +30,7 @@ class author
         $password = md5($_POST['password']);
         $status = $_POST['status'];
         $query = "INSERT INTO authors(name,email,password,status) VALUES ('" . $name . "','" . $email . "','" . $password . "'," . $status . ");";
-        $status = $this->conn->query($query);   
+        $status = $this->conn->query($query);
 
         if ($status == true) {
             setcookie('msg', 'Thêm mới thành công', time() + 5);
@@ -39,5 +39,32 @@ class author
             setcookie('msg', 'Thêm vào không thành công', time() + 5);
             header('Location: ?mod=author&act=add');
         }
+    }
+    function delete($id)
+    {
+        $query =  "DELETE from authors where id=" . $id . "";
+
+        $status = $this->conn->query($query);
+
+        if ($status == true) {
+            setcookie('msg', 'Xóa thành công', time() + 5);
+        } else {
+            setcookie('msg', 'Xóa không thành công', time() + 5);
+        }
+        header('Location: ?mod=author');
+    }
+    function update($id,$name,$email,$password,$status){
+
+    $query = "UPDATE authors SET name = '".$name."', email = '".$email."', password = '".$password."', status = '".$status."'   WHERE id = ".$id;
+
+    $result = $this->conn->query($query);
+    
+    if ($result== true) {
+        setcookie('msg','Update mới thành công',time()+5);
+        header('Location: ?mod=author');
+    }else {
+        setcookie('msg','Update vào không thành công',time()+5);
+        header('Location: ?mod=author&act=edit?id='.$id);
+    }
     }
 }

@@ -40,7 +40,7 @@
             <td><?= $row['descripition'] ?></td>
             <td>
               <a href="?mod=category&act=detail&id=<?= $row['id'] ?>" class="btn btn-success">Detail</a>
-              <a href="" class="btn btn-warning">Update</a>
+              <a href="?mod=category&act=edit&id=<?= $row['id'] ?>" class="btn btn-warning">Update</a>
               <a href="?mod=category&act=delete&id=<?= $row['id'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
             </td>
           </tr>

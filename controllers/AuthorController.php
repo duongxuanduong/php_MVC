@@ -2,24 +2,41 @@
     require_once("models/author.php");
     class AuthorController{
         var $author_model;
-        function __construct()
+        public function __construct()
         {
             $this->author_model = new author();
         }
-        function list(){
+        public function list(){
             $data = $this->author_model->All();
             require_once("Views/authors/list.php");
         }
-        function detail(){
+        public function detail(){
             $id = isset($_GET['id'])?$_GET['id']:1;
             $data = $this->author_model->find($id);
             require_once("Views/authors/detail.php");
         }
-        function add(){
+        public function add(){
             require_once("Views/authors/add.php");
         }
-        function store(){
+        public function store(){
             $this->author_model->store();
+        }
+        public function delete(){
+            $id = $_GET['id'];
+            $this->author_model->delete($id);
+        }
+        public function edit(){
+            $id = isset($_GET['id'])?$_GET['id']:1;
+            $data = $this->author_model->find($id);
+            require_once("Views/authors/edit.php");
+        }
+        public function update(){
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $password = md5($_POST['password']);
+            $status = $_POST['status'];
+            $this->author_model->update($id,$name,$email,$password,$status);
         }
     }
 

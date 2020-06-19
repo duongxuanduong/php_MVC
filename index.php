@@ -22,6 +22,12 @@ switch ($mod) {
             case 'delete':
                 $controller_obj->delete();
                 break;
+            case 'edit':
+                $controller_obj->edit();
+                break;
+            case 'update':
+                $controller_obj->update();
+                break;
             default:
                 $controller_obj->list();
                 break;
@@ -42,6 +48,15 @@ switch ($mod) {
                 break;
             case 'store':
                 $controller_obj->store();
+                break;
+            case 'delete':
+                $controller_obj->delete();
+                break;
+            case 'edit':
+                $controller_obj->edit();
+                break;
+            case 'update':
+                $controller_obj->update();
                 break;
             default:
                 $controller_obj->list();

@@ -53,8 +53,8 @@
             <td><?= $value['status'] ?></td>
             <td>
               <a href="?mod=author&act=detail&id=<?=$value['id']?>" type="button" class="btn btn-default">Xem</a>
-              <a href="" type="button" class="btn btn-success">Sửa</a>
-              <a href="" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-warning">Xóa</a>
+              <a href="?mod=author&act=edit&id=<?=$value['id']?>" type="button" class="btn btn-success">Update</a>
+              <a href="?mod=author&act=delete&id=<?=$value['id']?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-warning">Xóa</a>
             </td>
           </tr>
       <?php }?>

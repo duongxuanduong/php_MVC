@@ -54,4 +54,17 @@ class Category
         }
         header('Location: ?mod=category&act=list');
     }
+    function update($id, $title, $descripition)
+    {
+        $query = "UPDATE categories  SET title = '".$title."', descripition= '".$descripition." 'WHERE id = ".$id;
+        $resurt = $this->conn->query($query);
+
+        if ($resurt == true) {
+            setcookie('msg', 'Update mới thành công', time() + 5);
+            header('Location:?mod=category');
+        } else {
+            setcookie('msg', 'Thêm vào không thành công', time() + 5);
+            header('Location: ?mod=category&act=edit&id='.$id);
+        }
+    }
 }

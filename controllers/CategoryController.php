@@ -28,6 +28,17 @@
 				$this->cate_model->delete($_GET['id']);
 			}
 		}
+		public function edit(){
+			$id = isset($_GET['id'])?$_GET['id']:5;
+			$data = $this->cate_model->find($id);
+			require_once('views/category/edit.php');
+		}
+		public function update(){
+			$id = $_POST['id'];
+			$title = $_POST['title'];
+			$descripition = $_POST['descripition'];
+			$this->cate_model->update($id,$title,$descripition);
+		}
     }
 
 ?>
