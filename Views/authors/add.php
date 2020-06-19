@@ -17,14 +17,14 @@
     <div class="container">
     <h3 align="center">Zent - Education And Technology Group</h3>
     <h3 align="center">Add New Authors</h3>
-    <a href="index.php" type="button" class="btn btn-primary">Về trang chủ Authors - Admin</a>
+    <a href="?mod=authors" type="button" class="btn btn-primary">Về trang chủ Authors - Admin</a>
     <hr>
         <?php if(isset($_COOKIE['msg'])) { ?>
             <div class="alert alert-warning">
                 <strong>Thông báo</strong> <?=$_COOKIE['msg'] ?>
             </div>
         <?php } ?>
-        <form action="?mod=author&act=store" method="POST" role="form" enctype="multipart/form-data">
+        <form action="?mod=authors&act=store" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="" placeholder="" name="name">

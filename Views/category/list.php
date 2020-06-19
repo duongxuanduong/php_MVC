@@ -18,8 +18,8 @@
 <body>
   <div class="container">
     <h2 align="center">Categories</h2>
-    <a href="?mod=category&act=add" type="button" class="btn btn-primary">Thêm mới</a>
-    <a href="?mod=author" type="button" class="btn btn-primary">Về trang Author</a>
+    <a href="?mod=categories&act=add" type="button" class="btn btn-primary">Thêm mới</a>
+    <a href="?mod=authors&act=list" type="button" class="btn btn-primary">Về trang Author</a>
     <?php if (isset($_COOKIE['msg'])) { ?>
       <div class="alert alert-success">
         <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -39,9 +39,9 @@
             <td><?= $row['title'] ?></td>
             <td><?= $row['descripition'] ?></td>
             <td>
-              <a href="?mod=category&act=detail&id=<?= $row['id'] ?>" class="btn btn-success">Detail</a>
-              <a href="?mod=category&act=edit&id=<?= $row['id'] ?>" class="btn btn-warning">Update</a>
-              <a href="?mod=category&act=delete&id=<?= $row['id'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
+              <a href="?mod=categories&act=detail&id=<?= $row['id'] ?>" class="btn btn-success">Detail</a>
+              <a href="?mod=categories&act=edit&id=<?= $row['id'] ?>" class="btn btn-warning">Update</a>
+              <a href="?mod=categories&act=delete&id=<?= $row['id'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
             </td>
           </tr>
         <?php } ?>

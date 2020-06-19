@@ -24,8 +24,8 @@
   <div class="container">
     <h3 align="center">Zent - Education And Technology Group</h3>
     <h3 align="center">Authors List</h3>
-    <a href="?mod=author&act=add" type="button" class="btn btn-primary">Thêm mới</a>
-    <a href="?mod=category" type="button" class="btn btn-primary">Về trang Category</a>
+    <a href="?mod=authors&act=add" type="button" class="btn btn-primary">Thêm mới</a>
+    <a href="?mod=categories" type="button" class="btn btn-primary">Về trang Category</a>
     <?php if (isset($_COOKIE['msg'])) { ?>
       <div class="alert alert-success">
         <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -52,9 +52,9 @@
             <td><?= $value['password'] ?></td>
             <td><?= $value['status'] ?></td>
             <td>
-              <a href="?mod=author&act=detail&id=<?=$value['id']?>" type="button" class="btn btn-default">Xem</a>
-              <a href="?mod=author&act=edit&id=<?=$value['id']?>" type="button" class="btn btn-success">Update</a>
-              <a href="?mod=author&act=delete&id=<?=$value['id']?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-warning">Xóa</a>
+              <a href="?mod=authors&act=detail&id=<?=$value['id']?>" type="button" class="btn btn-default">Xem</a>
+              <a href="?mod=authors&act=edit&id=<?=$value['id']?>" type="button" class="btn btn-success">Update</a>
+              <a href="?mod=authors&act=delete&id=<?=$value['id']?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-warning">Xóa</a>
             </td>
           </tr>
       <?php }?>

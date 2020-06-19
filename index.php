@@ -1,9 +1,9 @@
 <?php
-$mod = isset($_GET['mod']) ? $_GET['mod'] : "category";
+$mod = isset($_GET['mod']) ? $_GET['mod'] : "categories";
 $act = isset($_GET['act']) ? $_GET['act'] : "list";
 
 switch ($mod) {
-    case 'category':
+    case 'categories':
         require_once('controllers/CategoryController.php');
         $controller_obj = new CategoryController();
         switch ($act) {
@@ -33,7 +33,7 @@ switch ($mod) {
                 break;
         }
         break;
-    case 'author':
+    case 'authors':
         require_once('controllers/AuthorController.php');
         $controller_obj = new AuthorController();
         switch ($act) {

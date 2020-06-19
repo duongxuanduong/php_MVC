@@ -17,14 +17,14 @@
     <div class="container">
     <h3 align="center">Zent - Education And Technology Group</h3>
     <h3 align="center">Add New Category</h3>
-    <a href="index.php" type="button" class="btn btn-primary">Về trang chủ Category - Admin</a>
+    <a href="?mod=categories" type="button" class="btn btn-primary">Về trang chủ Category - Admin</a>
     <hr>
         <?php if(isset($_COOKIE['msg'])) { ?>
             <div class="alert alert-success">
                 <strong>Thông báo</strong> <?=$_COOKIE['msg'] ?>
             </div>
         <?php } ?>
-        <form action="?mod=category&act=store" method="POST" role="form" enctype="multipart/form-data">
+        <form action="?mod=categories&act=store" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="" placeholder="" name="title">
